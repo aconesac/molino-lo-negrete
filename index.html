@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molino de Viento Lo Negrete - Finca Lo Negrete | Patrimonio de Cartagena</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('images/molino-frontal.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #b8956a, #d4a574);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            display: block;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .history-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .history-image {
+            text-align: center;
+        }
+
+        .windmill-illustration {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, #d4a574, #b8956a);
+            border-radius: 20px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .windmill-illustration::before {
+            content: '🏗️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        .restoration-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #d4a574;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #d4a574, #b8956a);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: 100%;
+            border-right-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: 100%;
+            border-left-color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .history-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-content::before {
+                left: -15px !important;
+                border-left-color: white !important;
+                border-right-color: transparent !important;
+            }
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            padding: 3px;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            height: 20px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: width 2s ease;
+        }
+        
+        /* Modal Styles for Image Zoom */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: modalZoomIn 0.3s ease-out;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover,
+        .close:focus {
+            background: rgba(255,0,0,0.7);
+            transform: scale(1.1);
+        }
+        
+        .modal-caption {
+            margin: auto;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            padding: 20px;
+            font-size: 18px;
+            max-width: 700px;
+        }
+        
+        @keyframes modalFadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes modalZoomIn {
+            from {transform: scale(0.8);}
+            to {transform: scale(1);}
+        }
+        
+        /* Responsive modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 98%;
+                margin-top: 50px;
+            }
+            
+            .close {
+                top: 10px;
+                right: 15px;
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .modal-caption {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Molino de Viento Lo Negrete</h1>
+            <p>Finca Lo Negrete, Cartagena - Patrimonio desde 1914</p>
+            <p>Nº 29 en el Catálogo de Molinos del Plan Director de los Molinos de Viento de la Región de Murcia </p>
+            <a href="#historia" class="cta-button">Descubre Su Historia</a>
+        </div>
+    </section>
+
+    <section id="historia" class="section">
+        <div class="container">
+            <h2 class="section-title">Historia del Molino</h2>
+            <div class="history-grid">
+                <div class="history-text">
+                    <h3>Un Siglo de Historia</h3>
+                    <p>Construido en <strong>1914</strong> en la Finca Lo Negrete, este molino de viento representa una ingeniosa solución desarrollada por nuestros antepasados para el aprovechamiento de los recursos hídricos subterráneos.</p>
+                    
+                    <p>Este ejemplar pertenece a la tipología de <strong>molinos de arcaduces</strong>, estructuras especializadas cuya misión principal era transformar el paisaje agrícola de la región. Su función consistía en extraer agua de pozos profundos para convertir las áridas tierras de secano en fértiles terrenos de regadío, revolucionando así la agricultura local.</p>
+                    
+                    <p>La construcción se realizó siguiendo el diseño tradicional: edificado sobre un sólido andén que permitía que el agua extraída cayese por gravedad hacia las balsas de almacenamiento anexas. Nuestro molino corresponde al tipo más extendido en la zona, con el pozo y la rueda de arcaduces ubicados en el exterior de la torre, a diferencia de los escasos ejemplares que albergaban este sistema en el interior.</p>
+                    
+                    <p>Durante décadas, este molino fue el corazón del sistema de riego de la finca, bombeando incansablemente agua desde las profundidades para dar vida a los cultivos. Su silueta se convirtió en un elemento característico del paisaje rural cartagenero, simbolizando la adaptación del hombre a las condiciones climáticas mediterráneas.</p>
+                    
+                    <p>Hoy en día, aunque silenciado por el paso del tiempo y los elementos, el molino aguarda su restauración para volver a contar su historia y educar a las futuras generaciones sobre estas extraordinarias obras de ingeniería popular.</p>
+                </div>
+                <div class="history-image">
+                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <img src="molino-base-piedra-caliza.webp" alt="Molino con base de piedra caliza" 
+                                 style="width: 100%; max-width: 500px; height: auto; border-radius: 12px; 
+                                        border: 3px solid #d4a574; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                        </div>
+                        <div style="padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #d4a574;">
+                            <h5 style="color: #2c3e50; margin-bottom: 12px; font-size: 1.1rem;">🏛️ Construcción Tradicional</h5>
+                            <p style="font-size: 1rem; color: #555; line-height: 1.7; margin: 0; text-align: justify;">
+                                Los molinos de viento mediterráneos se construían tradicionalmente sobre bases de <strong>piedra caliza</strong>, 
+                un material abundante en la región que proporcionaba la solidez y estabilidad necesarias para soportar 
+                la estructura y las fuerzas del viento. Esta base pétrea no solo garantizaba la durabilidad de la construcción, 
+                sino que también elevaba el mecanismo para optimizar la captación del viento y facilitar el acceso al sistema 
+                de extracción de agua subterránea.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                    <p style="margin-top: 20px; font-style: italic; color: #666; text-align: center;">Base tradicional de piedra caliza - Fundamento de la ingeniería mediterránea</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección de Galería Fotográfica y Esquemas -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Galería Fotográfica y Documentación Técnica</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Documentación visual completa del estado actual del molino y planos técnicos originales que guiarán la restauración.
+            </p>
+            
+            <!-- Galería de Imágenes Reales -->
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.5rem;">📸 Estado Actual del Molino</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px; transition: transform 0.3s ease;">
+                        <img src="molino-frontal.webp" alt="Vista frontal del molino" 
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Vista Frontal</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">Perspectiva principal mostrando la estructura completa del molino</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px; transition: transform 0.3s ease;">
+                        <img src="molino-lateral.webp" alt="Vista lateral del molino" 
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Vista Lateral</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">Perfil del molino y relación con el entorno paisajístico</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px; transition: transform 0.3s ease;">
+                        <img src="noria-frontal.webp" alt="Noria frontal" 
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Noria Frontal</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">Sistema de aspas y mecanismo de captación eólica</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px; transition: transform 0.3s ease;">
+                        <img src="noria-lateral.webp" alt="Noria lateral" 
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Noria Lateral</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">Perfil del sistema de aspas y estructura de soporte</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px; transition: transform 0.3s ease;">
+                        <img src="pozo.webp" alt="Pozo del molino" 
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Pozo Subterráneo</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">Fuente de agua y sistema de extracción mediante arcaduces</p>
+                    </div>
+                    
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px; transition: transform 0.3s ease;">
+                        <img src="balsa-del-molino.webp" alt="Balsa del molino" 
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; 
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Balsa de Almacenamiento</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">Depósito para la acumulación y distribución del agua de riego. Actualmente se llena con agua del trasvase Tajo-Segura</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Documentación Técnica -->
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.5rem;">📐 Documentación Técnica Original</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <img id="technical-diagram" src="esquema-molino-agua.jpg" alt="Esquema técnico detallado del molino de agua" 
+                             style="width: 100%; max-width: 800px; height: auto; border-radius: 12px; 
+                                    border: 3px solid #2c3e50; box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+                                    background: white; padding: 20px; cursor: pointer; transition: transform 0.3s ease;"
+                             onclick="openImageModal(this)" 
+                             onmouseover="this.style.transform='scale(1.02)'" 
+                             onmouseout="this.style.transform='scale(1)'">
+                        <div style="margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3;">
+                            <p style="font-size: 1rem; color: #1976d2; margin: 0; font-weight: 500;">
+                                💡 <strong>Haz clic en la imagen</strong> para verla en tamaño completo y explorar todos los detalles técnicos
+                            </p>
+                        </div>
+                        <h4 style="font-size: 1.3rem; color: #2c3e50; margin: 20px 0 10px 0;">Plano Técnico Histórico</h4>
+                        <p style="font-size: 1.1rem; color: #666; line-height: 1.6;">Esquema original que detalla el funcionamiento y componentes del sistema de molino de arcaduces</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px;">
+                        <div style="padding: 25px; background: #f8f9fa; border-radius: 12px; border-left: 5px solid #d4a574; margin-bottom: 20px;">
+                            <h4 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2rem;">🔄 Principio de Funcionamiento</h4>
+                            <p style="font-size: 1rem; color: #555; line-height: 1.7; margin-bottom: 15px;">
+                                El molino de arcaduces utiliza la <strong>energía eólica</strong> para extraer agua subterránea mediante un sistema ingenioso:
+                            </p>
+                            <ul style="font-size: 0.95rem; color: #666; line-height: 1.6; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>Captación del viento:</strong> Las aspas capturan la energía eólica</li>
+                                <li style="margin-bottom: 8px;"><strong>Transmisión:</strong> Un sistema de engranajes traslada el movimiento</li>
+                                <li style="margin-bottom: 8px;"><strong>Extracción:</strong> La rueda de arcaduces eleva el agua desde el pozo</li>
+                                <li style="margin-bottom: 8px;"><strong>Almacenamiento:</strong> El agua se deposita en la balsa para riego</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="padding: 25px; background: #e8f4f8; border-radius: 12px; border-left: 5px solid #17a2b8;">
+                            <h4 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2rem;">🏛️ Elementos Constructivos</h4>
+                            <p style="font-size: 1rem; color: #555; line-height: 1.7; margin: 0;">
+                                La construcción tradicional emplea <strong>piedra caliza local</strong> para la base, proporcionando 
+                                estabilidad estructural y resistencia a la intemperie. La torre cilíndrica aloja el mecanismo 
+                                de transmisión, mientras que la estructura superior soporta el sistema de aspas orientables.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Proyecto de Restauración</h2>
+            <div class="restoration-cards">
+                <div class="card">
+                    <h3>🏛️ Financiación</h3>
+                    <p>Gracias a una subvención gubernamental, hemos conseguido los fondos necesarios para devolver el molino a su esplendor original, respetando su patrimonio histórico.</p>
+                </div>
+                <div class="card">
+                    <h3>🔧 Restauración</h3>
+                    <p>Los trabajos incluirán la consolidación estructural, restauración de la maquinaria original y recuperación de los elementos arquitectónicos tradicionales.</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Objetivo Cultural</h3>
+                    <p>Convertir el molino en una atracción cultural que eduque sobre la historia rural de Cartagena y las técnicas tradicionales de extracción de agua.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Estado del Proyecto</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 25%;">25% - Financiación Aprobada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Cronología del Proyecto</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1914 - Construcción</h4>
+                        <p>Se construye el molino de viento para extracción de agua en la Finca Lo Negrete.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1957 - Fin de Uso Activo</h4>
+                        <p>El molino deja de utilizarse debido a la llegada de métodos más modernos de extracción de agua, y a la electrificación del campo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1970 - Deterioro</h4>
+                        <p>El molino se vuelve inservible tras décadas de abandono y exposición a los elementos. Se producen daños estructurales y la maquinaria se deteriora.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2000s - Primeras Ideas</h4>
+                        <p>Surgen las primeras ideas de reformar el molino para conservar este importante patrimonio histórico.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2018 - Búsqueda de Financiación</h4>
+                        <p>Se inicia activamente la búsqueda de formas de financiar la restauración del molino.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2024 - Subvención Aprobada</h4>
+                        <p>Se aprueba la subvención gubernamental para el proyecto de restauración.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2025 - Planificación</h4>
+                        <p>Fase actual: estudios técnicos y planificación detallada de la restauración.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Próximamente - Obras</h4>
+                        <p>Inicio de los trabajos de restauración y consolidación estructural.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Futuro - Apertura</h4>
+                        <p>Inauguración como atracción cultural abierta al público.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Planes Futuros</h2>
+            <div class="restoration-cards">
+                <div class="card">
+                    <h3>🎓 Educación</h3>
+                    <p>Visitas guiadas educativas para estudiantes y familias, explicando la historia del molino y las técnicas tradicionales de extracción de agua.</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 Cultura</h3>
+                    <p>Exposiciones temporales sobre patrimonio rural, talleres de oficios tradicionales y eventos culturales en el entorno del molino.</p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Turismo</h3>
+                    <p>Integración en las rutas turísticas de Cartagena, promocionando el turismo rural y el patrimonio industrial histórico.</p>
+                </div>
+                <div class="card">
+                    <h3>🔬 Investigación</h3>
+                    <p>Centro de documentación sobre molinos de viento tradicionales y sistemas de irrigación históricos en la Región de Murcia.</p>
+                </div>
+                <div class="card">
+                    <h3>🏛️ Museo al Aire Libre</h3>
+                    <p>Creación de un museo al aire libre con paneles informativos, recreación de herramientas de época y senderos interpretativos por la finca.</p>
+                </div>
+                <div class="card">
+                    <h3>🎪 Eventos Especiales</h3>
+                    <p>Organización de jornadas de puertas abiertas, mercados tradicionales, festivales de cultura rural y celebraciones del Día del Patrimonio.</p>
+                </div>
+                <div class="card">
+                    <h3>🌱 Educación Ambiental</h3>
+                    <p>Talleres sobre energías renovables históricas, sostenibilidad rural y conservación del paisaje tradicional murciano.</p>
+                </div>
+                <div class="card">
+                    <h3>👥 Actividades Comunitarias</h3>
+                    <p>Colaboración con asociaciones locales, grupos de senderismo, centros educativos y organizaciones culturales de Cartagena.</p>
+                </div>
+                <div class="card">
+                    <h3>📱 Experiencia Digital</h3>
+                    <p>Desarrollo de una aplicación móvil con realidad aumentada para mostrar el molino en funcionamiento y recursos educativos interactivos.</p>
+                </div>
+                <div class="card">
+                    <h3>🎬 Producciones Audiovisuales</h3>
+                    <p>Documentales sobre la historia del molino, grabación de contenido educativo y colaboraciones con medios locales.</p>
+                </div>
+                <div class="card">
+                    <h3>🍷 Turismo Gastronómico</h3>
+                    <p>Degustaciones de productos locales, cenas temáticas con historia y colaboraciones con productores tradicionales de la zona.</p>
+                </div>
+                <div class="card">
+                    <h3>🏃 Rutas Activas</h3>
+                    <p>Creación de rutas de senderismo, cicloturismo y paseos ecuestres que incluyan el molino como punto de interés principal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Ubicación</h2>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    El molino se encuentra en la Finca Lo Negrete, en el término municipal de Cartagena. 
+                    Un entorno rural privilegiado que conserva la esencia del paisaje tradicional murciano.
+                </p>
+            </div>
+            
+            <div style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 40px 0;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25272.498194285316!2d-0.98053325!3d37.647739949999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd636a1f4d667093%3A0x8159460c2eba387e!2sFinca%20Negrete%2C%20lo%2C%201%2C%2030319%20Cartagena%2C%20Murcia!5e0!3m2!1ses!2ses!4v1756208459887!5m2!1ses!2ses"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-top: 30px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center;">
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🚗 Acceso en Coche</h4>
+                        <p style="color: #666;">Fácil acceso desde la autovía del Mediterráneo (AP-7) y carreteras locales</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🚌 Transporte Público</h4>
+                        <p style="color: #666;">Conexiones desde el centro de Cartagena (consultar horarios)</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 10px;">🅿️ Aparcamiento</h4>
+                        <p style="color: #666;">Zona de aparcamiento disponible en los alrededores del molino</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Contacto e Información</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>📍 Ubicación</h3>
+                    <p>Finca Lo Negrete<br>Cartagena, Murcia<br>España</p>
+                    <a href="https://maps.app.goo.gl/XvtizvvB7hd1scGF6" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; border: 2px solid white; transition: all 0.3s ease;">📍 Ver en Google Maps</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Contacto</h3>
+                    <p>Para más información sobre el proyecto y futuras visitas<br><br><em>Información de contacto por confirmar</em></p>
+                </div>
+                <div class="contact-card">
+                    <h3>🕒 Estado</h3>
+                    <p>Actualmente en restauración<br><br>Apertura al público prevista tras finalización de obras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Molino de Viento - Finca Lo Negrete. Patrimonio Cultural de Cartagena.</p>
+            <p>Un proyecto de restauración y conservación del patrimonio rural español.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animación suave para el scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animación de la barra de progreso cuando entra en vista
+        const progressBar = document.querySelector('.progress-fill');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = '25%';
+                }
+            });
+        });
+        
+        if (progressBar) {
+            observer.observe(progressBar);
+        }
+
+        // Efecto parallax suave en el hero (limitado para evitar problemas de visualización)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+        
+        // Modal functionality for image zoom
+        function openImageModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('caption');
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            caption.innerHTML = img.alt;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+        
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        // Close modal with escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+    <!-- Modal for Image Zoom -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="caption"></div>
+    </div>
+    
+</body>
+</html>
