@@ -36,6 +36,53 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
+        .nav-bar {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4a574;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: #d4a574;
+            color: white;
+        }
+
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
@@ -48,6 +95,7 @@
             text-align: center;
             color: white;
             position: relative;
+            margin-top: 80px;
         }
 
         .hero-content h1 {
@@ -290,6 +338,11 @@
         }
 
         @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -425,6 +478,19 @@
     </style>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="visitas.html">Visitas</a></li>
+                <li><a href="colaboracion.html">Colaboración</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
             <h1>Molino de Viento Lo Negrete</h1>

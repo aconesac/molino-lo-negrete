@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboración - Molino Lo Negrete</title>
+    <meta name="description" content="Únete al proyecto de restauración del Molino Lo Negrete: voluntariado, donaciones, patrocinio y colaboraciones institucionales.">
+    <link rel="canonical" href="https://aconesac.github.io/molino-lo-negrete/colaboracion.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .nav-bar {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4a574;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: #d4a574;
+            color: white;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('images/molino-lateral.webp');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            display: block;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .collab-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #d4a574;
+        }
+
+        .collab-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .collab-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .collab-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .collab-card ul {
+            color: #666;
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        .collab-card li {
+            margin-bottom: 8px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .sponsor-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .sponsor-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-card:hover {
+            transform: scale(1.05);
+        }
+
+        .sponsor-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .sponsor-card .amount {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .sponsor-card ul {
+            text-align: left;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .sponsor-card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .sponsor-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: linear-gradient(135deg, #d4a574, #b8956a);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .collab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="visitas.html">Visitas</a></li>
+                <li><a href="colaboracion.html" class="active">Colaboración</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1>Únete al Proyecto</h1>
+            <p>Ayúdanos a preservar nuestro patrimonio histórico</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Formas de Colaborar</h2>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <h3>👥 Voluntariado</h3>
+                    <p>Únete a nuestro equipo de voluntarios y participa activamente en la restauración y difusión del molino.</p>
+                    <ul>
+                        <li>Apoyo en trabajos de restauración</li>
+                        <li>Guías para visitantes</li>
+                        <li>Investigación histórica</li>
+                        <li>Eventos y actividades</li>
+                        <li>Documentación fotográfica</li>
+                    </ul>
+                    <a href="#voluntario-form" class="cta-button">Ser Voluntario</a>
+                </div>
+
+                <div class="collab-card">
+                    <h3>🏛️ Patrocinio Empresarial</h3>
+                    <p>Las empresas pueden apoyar este proyecto de patrimonio cultural y obtener visibilidad en nuestra promoción.</p>
+                    <ul>
+                        <li>Logo en material promocional</li>
+                        <li>Reconocimiento en eventos</li>
+                        <li>Actividades corporativas</li>
+                        <li>Responsabilidad social empresarial</li>
+                        <li>Desgravaciones fiscales</li>
+                    </ul>
+                    <a href="#patrocinio-form" class="cta-button">Información de Patrocinio</a>
+                </div>
+
+                <div class="collab-card">
+                    <h3>🎓 Colaboración Académica</h3>
+                    <p>Universidades, centros de investigación y estudiantes pueden participar en estudios e investigaciones.</p>
+                    <ul>
+                        <li>Proyectos fin de carrera</li>
+                        <li>Investigación histórica</li>
+                        <li>Estudios arquitectónicos</li>
+                        <li>Análisis de materiales</li>
+                        <li>Publicaciones científicas</li>
+                    </ul>
+                    <a href="#academica-form" class="cta-button">Colaboración Académica</a>
+                </div>
+
+                <div class="collab-card">
+                    <h3>🏛️ Instituciones Públicas</h3>
+                    <p>Trabajamos con administraciones locales, regionales y nacionales para el desarrollo del proyecto.</p>
+                    <ul>
+                        <li>Cofinanciación de proyectos</li>
+                        <li>Promoción turística</li>
+                        <li>Programas educativos</li>
+                        <li>Eventos culturales</li>
+                        <li>Infraestructura y servicios</li>
+                    </ul>
+                    <a href="#institucional-form" class="cta-button">Colaboración Institucional</a>
+                </div>
+
+                <div class="collab-card">
+                    <h3>📚 Donación de Materiales</h3>
+                    <p>Buscamos documentos históricos, fotografías y objetos relacionados con el molino y la zona.</p>
+                    <ul>
+                        <li>Fotografías históricas</li>
+                        <li>Documentos y planos</li>
+                        <li>Herramientas tradicionales</li>
+                        <li>Testimonios orales</li>
+                        <li>Material didáctico</li>
+                    </ul>
+                    <a href="#donacion-form" class="cta-button">Donar Materiales</a>
+                </div>
+
+                <div class="collab-card">
+                    <h3>💰 Donaciones Económicas</h3>
+                    <p>Las contribuciones económicas nos ayudan a financiar la restauración y el mantenimiento del molino.</p>
+                    <ul>
+                        <li>Donaciones puntuales</li>
+                        <li>Contribuciones mensuales</li>
+                        <li>Adopta una parte del molino</li>
+                        <li>Crowdfunding específico</li>
+                        <li>Certificado de donación</li>
+                    </ul>
+                    <a href="#donacion-economica" class="cta-button">Realizar Donación</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Niveles de Patrocinio</h2>
+            <div class="sponsor-levels">
+                <div class="sponsor-card">
+                    <h3>🥉 Colaborador</h3>
+                    <div class="amount">500€ - 1.999€</div>
+                    <ul>
+                        <li>Logo en página web</li>
+                        <li>Mención en redes sociales</li>
+                        <li>Certificado de colaboración</li>
+                        <li>Entrada gratuita para directivos</li>
+                    </ul>
+                </div>
+
+                <div class="sponsor-card">
+                    <h3>🥈 Benefactor</h3>
+                    <div class="amount">2.000€ - 4.999€</div>
+                    <ul>
+                        <li>Todo lo anterior +</li>
+                        <li>Logo en material impreso</li>
+                        <li>Placa conmemorativa</li>
+                        <li>Evento corporativo anual</li>
+                        <li>Visita privada para clientes</li>
+                    </ul>
+                </div>
+
+                <div class="sponsor-card">
+                    <h3>🥇 Mecenas Principal</h3>
+                    <div class="amount">5.000€+</div>
+                    <ul>
+                        <li>Todo lo anterior +</li>
+                        <li>Naming rights de área específica</li>
+                        <li>Logo permanente en el molino</li>
+                        <li>Participación en el consejo asesor</li>
+                        <li>Eventos exclusivos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Impacto de tu Colaboración</h2>
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <span class="stat-number">111</span>
+                    <span class="stat-label">Años de historia que preservamos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5.000+</span>
+                    <span class="stat-label">Visitantes anuales esperados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Empleos locales generados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Patrimonio conservado para el futuro</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Formulario de Colaboración</h2>
+            <div class="contact-form">
+                <form id="collaborationForm">
+                    <div class="form-group">
+                        <label for="tipoColaboracion">Tipo de colaboración *</label>
+                        <select id="tipoColaboracion" name="tipoColaboracion" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="voluntario">Voluntariado</option>
+                            <option value="patrocinio">Patrocinio empresarial</option>
+                            <option value="academica">Colaboración académica</option>
+                            <option value="institucional">Colaboración institucional</option>
+                            <option value="donacion-material">Donación de materiales</option>
+                            <option value="donacion-economica">Donación económica</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre/Empresa *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organizacion">Organización/Institución</label>
+                        <input type="text" id="organizacion" name="organizacion">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experiencia">Experiencia relevante</label>
+                        <textarea id="experiencia" name="experiencia" placeholder="Cuéntanos sobre tu experiencia en proyectos similares, tu motivación para colaborar o los recursos que puedes aportar..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disponibilidad">Disponibilidad/Propuesta</label>
+                        <textarea id="disponibilidad" name="disponibilidad" placeholder="Indica tu disponibilidad de tiempo, el tipo de colaboración que propones o cualquier idea específica que tengas..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">🤝 Enviar Propuesta de Colaboración</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Molino de Viento - Finca Lo Negrete. Patrimonio Cultural de Cartagena.</p>
+            <p>Un proyecto de restauración y conservación del patrimonio rural español.</p>
+            <p><strong>¡Gracias por ayudarnos a preservar nuestra historia!</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        // Form handling
+        document.getElementById('collaborationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés en colaborar con el proyecto! Nos pondremos en contacto contigo pronto para discutir las posibilidades de colaboración.');
+        });
+
+        // Smooth scroll for CTA buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

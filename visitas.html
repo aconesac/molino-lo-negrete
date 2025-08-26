@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifica tu Visita - Molino Lo Negrete</title>
+    <meta name="description" content="Información práctica para visitar el Molino Lo Negrete: horarios, reservas, acceso y servicios disponibles.">
+    <link rel="canonical" href="https://aconesac.github.io/molino-lo-negrete/visitas.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .nav-bar {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4a574;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: #d4a574;
+            color: white;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('images/molino-frontal.webp');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            display: block;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #d4a574;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .info-card ul {
+            color: #666;
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+        }
+
+        .alert-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #f39c12;
+        }
+
+        .alert-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .alert-box p {
+            color: #856404;
+            margin: 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="visitas.html" class="active">Visitas</a></li>
+                <li><a href="colaboracion.html">Colaboración</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1>Planifica tu Visita</h1>
+            <p>Información práctica para conocer el Molino Lo Negrete</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="alert-box">
+                <h4>⚠️ Estado Actual del Proyecto</h4>
+                <p>El molino se encuentra actualmente en proceso de restauración. Las visitas públicas comenzarán tras la finalización de las obras. Mantente informado a través de nuestras redes sociales y página de noticias.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Información para Futuras Visitas</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🕒 Horarios Previstos</h3>
+                    <p><strong>Una vez abierto al público:</strong></p>
+                    <ul>
+                        <li><strong>Martes a Sábado:</strong> 9:30 - 17:00</li>
+                        <li><strong>Domingos:</strong> 10:00 - 14:00</li>
+                        <li><strong>Lunes:</strong> Cerrado (excepto festivos)</li>
+                        <li><strong>Visitas guiadas:</strong> 11:00, 13:00, 16:00</li>
+                    </ul>
+                    <p><em>Los horarios pueden variar según la temporada</em></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎫 Tarifas Planificadas</h3>
+                    <ul>
+                        <li><strong>Entrada general:</strong> 5€</li>
+                        <li><strong>Estudiantes y mayores de 65:</strong> 3€</li>
+                        <li><strong>Menores de 12 años:</strong> Gratuito</li>
+                        <li><strong>Grupos (min. 15 personas):</strong> 4€/persona</li>
+                        <li><strong>Visita guiada:</strong> +2€</li>
+                    </ul>
+                    <p><em>Precios orientativos sujetos a confirmación</em></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🚗 Cómo Llegar</h3>
+                    <p><strong>Dirección:</strong><br>Finca Lo Negrete, Cartagena, Murcia</p>
+                    <p><strong>En coche:</strong></p>
+                    <ul>
+                        <li>Desde Cartagena: 15 minutos por N-332</li>
+                        <li>Desde Murcia: 45 minutos por A-30</li>
+                        <li>Aparcamiento gratuito disponible</li>
+                    </ul>
+                    <p><strong>Transporte público:</strong><br>Línea de autobús desde Cartagena (consultar horarios)</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>♿ Accesibilidad</h3>
+                    <ul>
+                        <li>Acceso adaptado para personas con movilidad reducida</li>
+                        <li>Senderos pavimentados</li>
+                        <li>Área de descanso con bancos</li>
+                        <li>Información en braille y audio-guías</li>
+                        <li>Aseos adaptados</li>
+                    </ul>
+                    <p><em>Estamos comprometidos con la accesibilidad universal</em></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>👥 Visitas en Grupo</h3>
+                    <p><strong>Grupos escolares:</strong></p>
+                    <ul>
+                        <li>Programas educativos adaptados por edades</li>
+                        <li>Material didáctico incluido</li>
+                        <li>Reserva previa obligatoria</li>
+                    </ul>
+                    <p><strong>Grupos turísticos:</strong></p>
+                    <ul>
+                        <li>Visitas guiadas especializadas</li>
+                        <li>Duración: 90 minutos</li>
+                        <li>Máximo 25 personas por grupo</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎒 Servicios Previstos</h3>
+                    <ul>
+                        <li>Centro de interpretación</li>
+                        <li>Tienda de recuerdos</li>
+                        <li>Área de picnic</li>
+                        <li>WiFi gratuito</li>
+                        <li>Aseos públicos</li>
+                        <li>Punto de información turística</li>
+                        <li>Aparcamiento para bicicletas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Reserva tu Visita</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                Aunque aún no estamos abiertos, puedes registrarte para recibir información sobre la apertura y reservar tu plaza para las primeras visitas.
+            </p>
+
+            <div class="contact-form">
+                <form id="visitForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoVisita">Tipo de visita</label>
+                        <select id="tipoVisita" name="tipoVisita">
+                            <option value="individual">Visita individual/familiar</option>
+                            <option value="grupo">Grupo turístico</option>
+                            <option value="escolar">Grupo escolar</option>
+                            <option value="investigacion">Visita de investigación</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personas">Número de personas</label>
+                        <input type="number" id="personas" name="personas" min="1" max="25" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaPreferida">Fecha preferida</label>
+                        <input type="date" id="fechaPreferida" name="fechaPreferida">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios o necesidades especiales</label>
+                        <textarea id="comentarios" name="comentarios" placeholder="Indica si necesitas accesibilidad especial, si tienes alguna pregunta específica o cualquier otra información relevante..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">📧 Solicitar Información</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Recomendaciones para tu Visita</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>☀️ Mejor Época</h3>
+                    <p>El molino se puede visitar todo el año, pero recomendamos:</p>
+                    <ul>
+                        <li><strong>Primavera:</strong> Clima ideal y paisaje verde</li>
+                        <li><strong>Otoño:</strong> Temperaturas suaves</li>
+                        <li><strong>Invierno:</strong> Menos turistas, cielos despejados</li>
+                    </ul>
+                    <p><em>Evitar las horas centrales del verano</em></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>👕 Qué Traer</h3>
+                    <ul>
+                        <li>Calzado cómodo para caminar</li>
+                        <li>Sombrero y protector solar</li>
+                        <li>Botella de agua</li>
+                        <li>Cámara fotográfica</li>
+                        <li>Ropa adecuada para exterior</li>
+                    </ul>
+                    <p><em>El terreno es mayormente llano y accesible</em></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📱 Experiencia Digital</h3>
+                    <p>Próximamente dispondremos de:</p>
+                    <ul>
+                        <li>App móvil con realidad aumentada</li>
+                        <li>Códigos QR con información adicional</li>
+                        <li>Recreación 3D del molino funcionando</li>
+                        <li>Audio-guía en varios idiomas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Molino de Viento - Finca Lo Negrete. Patrimonio Cultural de Cartagena.</p>
+            <p>Un proyecto de restauración y conservación del patrimonio rural español.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form handling
+        document.getElementById('visitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Te contactaremos cuando el molino esté abierto al público. Mientras tanto, síguenos en nuestras redes sociales para estar al día de los avances.');
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

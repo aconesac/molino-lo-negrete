@@ -24,3 +24,4 @@ Gemfile.lock
 *.tmp
 *.qodo/
 .vscode/
+deploy.sh
