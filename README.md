@@ -122,6 +122,7 @@ El sitio web incluye:
 - ⚡ **Animaciones suaves** y efectos parallax
 - 📱 **Diseño responsive** optimizado
 - 🎨 **Interfaz moderna** y atractiva
+- 📊 **Google Analytics** integrado
 
 ### Recursos Multimedia
 - Imágenes optimizadas en formato WebP
@@ -134,7 +135,11 @@ El sitio web incluye:
 ```
 molino-lo-negrete/
 ├── index.html              # Página principal
-├── images/                 # Galería fotográfica
+├── visitas.html           # Información para visitantes
+├── colaboracion.html      # Página de colaboración
+├── noticias.html          # Noticias del proyecto
+├── blog.html              # Blog sobre patrimonio
+├── images/                # Galería fotográfica
 │   ├── molino-frontal.webp
 │   ├── molino-lateral.webp
 │   ├── noria-frontal.webp
@@ -143,9 +148,9 @@ molino-lo-negrete/
 │   ├── balsa-del-molino.webp
 │   ├── molino-base-piedra-caliza.webp
 │   └── esquema-molino-agua.jpg
-├── README.md               # Este archivo
-├── LICENSE                 # Licencia del proyecto
-└── .gitignore             # Archivos ignorados por Git
+├── README.md              # Este archivo
+├── LICENSE                # Licencia del proyecto
+└── .gitignore            # Archivos ignorados por Git
 ```
 
 ## 🌐 GitHub Pages
