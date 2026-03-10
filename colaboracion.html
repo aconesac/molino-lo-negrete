@@ -6,14 +6,33 @@
     <title>Colaboración - Molino Lo Negrete</title>
     <meta name="description" content="Únete al proyecto de restauración del Molino Lo Negrete: voluntariado, donaciones, patrocinio y colaboraciones institucionales.">
     <link rel="canonical" href="https://aconesac.github.io/molino-lo-negrete/colaboracion.html">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Colaboración - Molino Lo Negrete">
+    <meta property="og:description" content="Únete al proyecto de restauración del Molino Lo Negrete: voluntariado, donaciones, patrocinio y colaboraciones institucionales.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aconesac.github.io/molino-lo-negrete/colaboracion.html">
+    <meta property="og:image" content="https://aconesac.github.io/molino-lo-negrete/images/molino-lo-negrete.jpg">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Colaboración - Molino Lo Negrete">
+    <meta name="twitter:description" content="Únete al proyecto de restauración del Molino Lo Negrete: voluntariado, donaciones, patrocinio y colaboraciones institucionales.">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7B4P5PJ98"></script>
+    <!-- Google Analytics con Consent Mode v2 -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7B4P5PJ98"></script>
+    <script>
         gtag('js', new Date());
-        gtag('config', 'G-S7B4P5PJ98'); // Replace with your actual Google Analytics ID
+        gtag('config', 'G-S7B4P5PJ98');
     </script>
     
     <style>
@@ -464,6 +483,7 @@
             <h2 class="section-title">Formulario de Colaboración</h2>
             <div class="contact-form">
                 <form id="collaborationForm">
+                    <input type="hidden" name="_subject" value="Nueva propuesta de colaboración - Molino Lo Negrete">
                     <div class="form-group">
                         <label for="tipoColaboracion">Tipo de colaboración *</label>
                         <select id="tipoColaboracion" name="tipoColaboracion" required>
@@ -507,6 +527,13 @@
                         <textarea id="disponibilidad" name="disponibilidad" placeholder="Indica tu disponibilidad de tiempo, el tipo de colaboración que propones o cualquier idea específica que tengas..."></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label style="display:flex;align-items:flex-start;gap:0.6rem;cursor:pointer;font-weight:normal;">
+                            <input type="checkbox" name="_gdpr_consent" required style="width:auto;margin-top:3px;flex-shrink:0;">
+                            <span>He leído y acepto la <a href="privacidad.html" style="color:#d4a574;">política de privacidad</a>. Consiento el tratamiento de mis datos para gestionar mi propuesta de colaboración.</span>
+                        </label>
+                    </div>
+
                     <button type="submit" class="submit-btn">🤝 Enviar Propuesta de Colaboración</button>
                 </form>
             </div>
@@ -518,14 +545,46 @@
             <p>&copy; 2025 Molino de Viento - Finca Lo Negrete. Patrimonio Cultural de Cartagena.</p>
             <p>Un proyecto de restauración y conservación del patrimonio rural español.</p>
             <p><strong>¡Gracias por ayudarnos a preservar nuestra historia!</strong></p>
+            <p style="margin-top:0.5rem;font-size:0.85rem;"><a href="privacidad.html" style="color:#d4a574;">Política de Privacidad</a> | <a href="#" onclick="document.getElementById('cookieBanner').style.display='block';return false;" style="color:#d4a574;">Gestionar cookies</a></p>
         </div>
     </footer>
 
     <script>
         // Form handling
-        document.getElementById('collaborationForm').addEventListener('submit', function(e) {
+        document.getElementById('collaborationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu interés en colaborar con el proyecto! Nos pondremos en contacto contigo pronto para discutir las posibilidades de colaboración.');
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+
+            try {
+                const response = await fetch('https://formspree.io/f/xgonanqb', {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    const msg = document.createElement('div');
+                    msg.style.cssText = 'background:#d4edda;color:#155724;border:1px solid #c3e6cb;border-radius:8px;padding:1.5rem;text-align:center;font-size:1.1rem;';
+                    msg.innerHTML = '<strong>✅ ¡Propuesta enviada!</strong><br>Gracias por tu interés en colaborar. Nos pondremos en contacto contigo pronto para explorar las posibilidades.';
+                    form.parentNode.insertBefore(msg, form);
+                } else {
+                    throw new Error('Error en el servidor');
+                }
+            } catch (err) {
+                const msg = document.createElement('div');
+                msg.style.cssText = 'background:#f8d7da;color:#721c24;border:1px solid #f5c6cb;border-radius:8px;padding:1rem;margin-top:1rem;text-align:center;';
+                msg.textContent = '❌ Ha ocurrido un error. Por favor, inténtalo de nuevo o contáctanos directamente.';
+                const existing = form.querySelector('.form-error');
+                if (existing) existing.remove();
+                msg.className = 'form-error';
+                form.appendChild(msg);
+                btn.disabled = false;
+                btn.textContent = '🤝 Enviar Propuesta de Colaboración';
+            }
         });
 
         // Smooth scroll for CTA buttons
@@ -538,6 +597,36 @@
                 }
             });
         });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2c2c2c;color:#fff;padding:1rem 1.5rem;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.3);">
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1200px;margin:0 auto;">
+            <p style="margin:0;flex:1;min-width:200px;font-size:0.9rem;">Usamos cookies de Google Analytics para analizar el tráfico y mejorar la experiencia. <a href="privacidad.html" style="color:#d4a574;">Política de privacidad</a></p>
+            <div style="display:flex;gap:0.5rem;flex-shrink:0;">
+                <button onclick="acceptCookies()" style="background:#d4a574;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;">Aceptar</button>
+                <button onclick="rejectCookies()" style="background:transparent;color:#ccc;border:1px solid #ccc;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;">Rechazar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const consent = localStorage.getItem('gdpr_consent');
+            if (consent === 'granted') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+            } else if (!consent) {
+                document.getElementById('cookieBanner').style.display = 'block';
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('gdpr_consent', 'granted');
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        function rejectCookies() {
+            localStorage.setItem('gdpr_consent', 'denied');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
     </script>
 </body>
 </html>

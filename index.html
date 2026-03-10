@@ -22,12 +22,44 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://aconesac.github.io/molino-lo-negrete">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LandmarkOrTouristAttraction",
+      "name": "Molino Lo Negrete",
+      "description": "Molino de viento histórico de 1914 en Finca Lo Negrete, Cartagena, Murcia. Proyecto de restauración y patrimonio arquitectónico.",
+      "url": "https://aconesac.github.io/molino-lo-negrete/",
+      "image": "https://aconesac.github.io/molino-lo-negrete/images/molino-lo-negrete.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cartagena",
+        "addressRegion": "Murcia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.6552076523032,
+        "longitude": -0.9772664760594154
+      },
+      "foundingDate": "1914",
+      "keywords": "molino lo negrete, finca lo negrete, molino de viento, cartagena, murcia, patrimonio histórico"
+    }
+    </script>
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7B4P5PJ98"></script>
+    <!-- Google Analytics con Consent Mode v2 -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7B4P5PJ98"></script>
+    <script>
         gtag('js', new Date());
         gtag('config', 'G-S7B4P5PJ98');
     </script>
@@ -699,7 +731,59 @@
             <div style="margin-top: 50px;">
                 <h3 style="text-align: center; margin-bottom: 30px;">Estado del Proyecto</h3>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 25%;">25% - Financiación Aprobada</div>
+                    <div class="progress-fill" style="width: 40%;">40% - Restauración en Curso</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Avance de las Obras</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Seguimiento fotográfico y en vídeo de los trabajos de restauración en curso.
+            </p>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.5rem;">📸 Fotografías de los Trabajos</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion/grua_colocacion.jpeg" alt="Grúa durante la colocación"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Grúa — Colocación</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Vista general de la grúa durante los trabajos de colocación</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion/grua_colocacion_zoomup.jpeg" alt="Grúa — detalle"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Grúa — Detalle</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Detalle del proceso de colocación con la grúa</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion/rueda_desmontada.jpeg" alt="Rueda desmontada"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Rueda Desmontada</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">La rueda de arcaduces tras ser retirada para su restauración</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 1.5rem;">🎬 Vídeo — Extracción de la Rueda</h3>
+                <div style="text-align: center;">
+                    <video controls
+                           style="width: 100%; max-width: 800px; border-radius: 12px;
+                                  border: 3px solid #d4a574; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                        <source src="images/remodelacion/video_sacar_rueda.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de vídeo.
+                    </video>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">Proceso de extracción de la rueda de arcaduces durante los trabajos de restauración</p>
                 </div>
             </div>
         </div>
@@ -753,13 +837,13 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Próximamente - Obras</h4>
+                    <h4>2026 - Obras de Restauración</h4>
                         <p>Inicio de los trabajos de restauración y consolidación estructural.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Futuro - Apertura</h4>
+                        <h4>2027 - Apertura</h4>
                         <p>Inauguración como atracción cultural abierta al público.</p>
                     </div>
                 </div>
@@ -889,6 +973,7 @@
         <div class="container">
             <p>&copy; 2025 Molino de Viento - Finca Lo Negrete. Patrimonio Cultural de Cartagena.</p>
             <p>Un proyecto de restauración y conservación del patrimonio rural español.</p>
+            <p style="margin-top:0.5rem;font-size:0.85rem;"><a href="privacidad.html" style="color:#d4a574;">Política de Privacidad</a> | <a href="#" onclick="document.getElementById('cookieBanner').style.display='block';return false;" style="color:#d4a574;">Gestionar cookies</a></p>
         </div>
     </footer>
 
@@ -963,6 +1048,35 @@
         <img class="modal-content" id="modalImage">
         <div class="modal-caption" id="caption"></div>
     </div>
-    
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2c2c2c;color:#fff;padding:1rem 1.5rem;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.3);">
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1200px;margin:0 auto;">
+            <p style="margin:0;flex:1;min-width:200px;font-size:0.9rem;">Usamos cookies de Google Analytics para analizar el tráfico y mejorar la experiencia. <a href="privacidad.html" style="color:#d4a574;">Política de privacidad</a></p>
+            <div style="display:flex;gap:0.5rem;flex-shrink:0;">
+                <button onclick="acceptCookies()" style="background:#d4a574;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;">Aceptar</button>
+                <button onclick="rejectCookies()" style="background:transparent;color:#ccc;border:1px solid #ccc;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;">Rechazar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const consent = localStorage.getItem('gdpr_consent');
+            if (consent === 'granted') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+            } else if (!consent) {
+                document.getElementById('cookieBanner').style.display = 'block';
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('gdpr_consent', 'granted');
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        function rejectCookies() {
+            localStorage.setItem('gdpr_consent', 'denied');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
