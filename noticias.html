@@ -51,6 +51,7 @@
 
         .nav-bar {
             background: rgba(44, 62, 80, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             padding: 15px 0;
             position: fixed;
@@ -396,6 +397,7 @@
             <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
+                <li><a href="restauracion.html">Restauración</a></li>
                 <li><a href="visitas.html">Visitas</a></li>
                 <li><a href="colaboracion.html">Colaboración</a></li>
                 <li><a href="noticias.html" class="active">Noticias</a></li>
@@ -580,7 +582,13 @@
                         <div style="display: flex; flex-direction: column; gap: 15px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f0f8ff; border-radius: 8px;">
                                 <span style="color: #2c3e50;">Días desde inicio:</span>
-                                <strong style="color: #d4a574;">245</strong>
+                                <strong id="dias-desde-inicio" style="color: #d4a574;"></strong>
+                            <script>
+                                document.getElementById('dias-desde-inicio').textContent = Math.max(
+                                    0,
+                                    Math.floor((Date.now() - new Date('2025-08-01T00:00:00').getTime()) / 86400000)
+                                );
+                            </script>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f0f8ff; border-radius: 8px;">
                                 <span style="color: #2c3e50;">Voluntarios registrados:</span>
@@ -588,7 +596,24 @@
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f0f8ff; border-radius: 8px;">
                                 <span style="color: #2c3e50;">Visitas web:</span>
-                                <strong style="color: #d4a574;">1,247</strong>
+                                <strong id="visitas-web" style="color: #d4a574;">…</strong>
+                            <script>
+                                (function() {
+                                    var ns = 'molino-lo-negrete';
+                                    var key = 'visitas';
+                                    var base = 'https://api.counterapi.dev/v1/' + ns + '/' + key + '/';
+                                    var already = sessionStorage.getItem('mln_counted');
+                                    var url = already ? base + 'get' : base + 'up';
+                                    fetch(url)
+                                        .then(function(r){ return r.json(); })
+                                        .then(function(d){
+                                            if (!already) sessionStorage.setItem('mln_counted', '1');
+                                            var el = document.getElementById('visitas-web');
+                                            if (el) el.textContent = (d.count || 0).toLocaleString('es-ES');
+                                        })
+                                        .catch(function(){ /* silently ignore if API is down */ });
+                                })();
+                            </script>
                             </div>
                         </div>
                     </div>

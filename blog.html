@@ -51,6 +51,7 @@
 
         .nav-bar {
             background: rgba(44, 62, 80, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             padding: 15px 0;
             position: fixed;
@@ -274,6 +275,14 @@
             color: #b8956a;
         }
 
+        .post-video {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            max-height: 480px;
+            background: #000;
+        }
+
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -412,6 +421,7 @@
             <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
+                <li><a href="restauracion.html">Restauración</a></li>
                 <li><a href="visitas.html">Visitas</a></li>
                 <li><a href="colaboracion.html">Colaboración</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
@@ -431,6 +441,37 @@
         <div class="container">
             <div class="blog-grid">
                 <div class="main-content">
+                    <article class="blog-post featured">
+                        <div class="post-meta">
+                            <span class="post-date">30 de marzo de 2026</span>
+                            <span class="post-author">Por el equipo del proyecto</span>
+                            <span class="post-category">Archivo histórico</span>
+                        </div>
+                        <h2 class="post-title">El Molino en 1976: Una Mirada desde el Porche</h2>
+                        <p class="post-excerpt">
+                            Recuperamos una grabación de 1976 que muestra el Molino Lo Negrete desde el porche de la
+                            finca. Un documento visual excepcional que nos permite ver el estado del molino hace casi
+                            cincuenta años.
+                        </p>
+                        <video class="post-video" controls preload="metadata">
+                            <source src="images/cut_video_1_molino_desde_porche.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de vídeo.
+                        </video>
+                        <div class="post-content">
+                            <p>
+                                Esta grabación de 1976 es uno de los testimonios visuales más valiosos con los que
+                                contamos. Captada desde el porche de la Finca Lo Negrete, nos muestra el molino
+                                tal y como era hace casi medio siglo: su estructura, su entorno y las condiciones
+                                en las que se encontraba antes de décadas de abandono.
+                            </p>
+                            <p>
+                                Imágenes como esta son fundamentales para guiar el proceso de restauración, ya que
+                                nos permiten comparar el estado original con el actual y tomar decisiones informadas
+                                sobre cómo devolver al molino su aspecto histórico.
+                            </p>
+                        </div>
+                    </article>
+
                     <article class="blog-post featured">
                         <div class="post-meta">
                             <span class="post-date">25 de agosto de 2025</span>
@@ -571,6 +612,10 @@
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">📖 Artículos Populares</h3>
                         <div class="popular-posts">
+                            <div class="popular-item">
+                                <div class="popular-title">El Molino en 1976: Una Mirada desde el Porche</div>
+                                <div class="popular-date">30 mar 2026</div>
+                            </div>
                             <div class="popular-item">
                                 <div class="popular-title">Los secretos de la construcción con piedra caliza</div>
                                 <div class="popular-date">18 ago 2025</div>

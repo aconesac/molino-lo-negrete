@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restauración - Molino Lo Negrete</title>
+    <meta name="description" content="Proyecto de restauración del Molino Lo Negrete: financiación, trabajos en curso, fotografías y vídeos del avance de las obras.">
+    <link rel="canonical" href="https://aconesac.github.io/molino-lo-negrete/restauracion.html">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Restauración - Molino Lo Negrete">
+    <meta property="og:description" content="Proyecto de restauración del Molino Lo Negrete: financiación, trabajos en curso, fotografías y vídeos del avance de las obras.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aconesac.github.io/molino-lo-negrete/restauracion.html">
+    <meta property="og:image" content="https://aconesac.github.io/molino-lo-negrete/images/molino-lo-negrete.jpg">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restauración - Molino Lo Negrete">
+    <meta name="twitter:description" content="Proyecto de restauración del Molino Lo Negrete: financiación, trabajos en curso, fotografías y vídeos del avance de las obras.">
+
+    <!-- Google Analytics con Consent Mode v2 -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7B4P5PJ98"></script>
+    <script>
+        gtag('js', new Date());
+        gtag('config', 'G-S7B4P5PJ98');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .nav-bar {
+            background: rgba(44, 62, 80, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4a574;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: #d4a574;
+            color: white;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+                        url('images/molino-frontal.webp');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .restoration-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #d4a574;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            padding: 3px;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(45deg, #d4a574, #b8956a);
+            height: 20px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: width 2s ease;
+        }
+
+        /* Modal Styles for Image Zoom */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 95%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: modalZoomIn 0.3s ease-out;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            background: rgba(255,0,0,0.7);
+            transform: scale(1.1);
+        }
+
+        .modal-caption {
+            margin: auto;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            padding: 20px;
+            font-size: 18px;
+            max-width: 700px;
+        }
+
+        @keyframes modalFadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes modalZoomIn {
+            from {transform: scale(0.8);}
+            to {transform: scale(1);}
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                max-width: 98%;
+                margin-top: 50px;
+            }
+
+            .close {
+                top: 10px;
+                right: 15px;
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restauracion.html" class="active">Restauración</a></li>
+                <li><a href="visitas.html">Visitas</a></li>
+                <li><a href="colaboracion.html">Colaboración</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1>Restauración del Molino</h1>
+            <p>Devolviendo el esplendor a un siglo de patrimonio</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Proyecto de Restauración</h2>
+            <div class="restoration-cards">
+                <div class="card">
+                    <h3>🏛️ Financiación</h3>
+                    <p>Gracias a una subvención de la comunidad autónoma de la Región de Murcia, hemos conseguido los fondos necesarios para devolver el molino a su esplendor original, respetando su patrimonio histórico.</p>
+                </div>
+                <div class="card">
+                    <h3>🔧 Restauración</h3>
+                    <p>Los trabajos incluirán la consolidación estructural, restauración de la maquinaria original y recuperación de los elementos arquitectónicos tradicionales.</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Objetivo Cultural</h3>
+                    <p>Convertir el molino en una atracción cultural que eduque sobre la historia rural de Cartagena y las técnicas tradicionales de extracción de agua.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Estado del Proyecto</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;">50% - Restauración en Curso</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Avance de las Obras</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Seguimiento fotográfico y en vídeo de los trabajos de restauración en curso.
+            </p>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.5rem;">📸 Fotografías de los Trabajos</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion/grua_colocacion.jpeg" alt="Grúa durante la colocación"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Grúa — Colocación</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Vista general de la grúa durante los trabajos de colocación</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion/grua_colocacion_zoomup.jpeg" alt="Grúa — detalle"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Grúa — Detalle</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Detalle del proceso de colocación con la grúa</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion/rueda_desmontada.jpeg" alt="Rueda desmontada"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Rueda Desmontada</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">La rueda de arcaduces tras ser retirada para su restauración</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 1.5rem;">🎬 Vídeo — Extracción de la Rueda</h3>
+                <div style="text-align: center;">
+                    <video controls
+                           style="width: 100%; max-width: 800px; border-radius: 12px;
+                                  border: 3px solid #d4a574; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                        <source src="images/remodelacion/video_sacar_rueda.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de vídeo.
+                    </video>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">Proceso de extracción de la rueda de arcaduces durante los trabajos de restauración</p>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-top: 40px;">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.5rem;">📸 Restauración de la Corona Metálica y Fachada (marzo 2026)</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion_30032026/colocacion_corona_metalica.jpeg" alt="Colocación de la corona metálica"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Colocación de la Corona</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Instalación de la corona metálica superior del molino</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion_30032026/sellado_corona_metalica.jpeg" alt="Sellado de la corona metálica"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Sellado de la Corona</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Trabajos de sellado e impermeabilización de la corona metálica</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion_30032026/llenado corona.jpeg" alt="Llenado de la corona metálica"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Colocación de la Corona — Detalle</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Detalle del proceso de instalación de la corona metálica</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion_30032026/cubrimiento_fachada.jpeg" alt="Cubrimiento de la fachada"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Cubrimiento de la Fachada</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Proceso de revestimiento y acabado de la fachada exterior</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion_30032026/detalle_cubrimiento_fachada.jpeg" alt="Colocación de la fachada"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Colocación de la Fachada</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Instalación de los paneles de revestimiento en la fachada exterior</p>
+                    </div>
+                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
+                        <img src="images/remodelacion_30032026/fachada_terminada.jpeg" alt="Fachada terminada"
+                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
+                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
+                             onclick="openImageModal(this)">
+                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Fachada Terminada</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Resultado final de la restauración de la fachada exterior</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-top: 40px;">
+                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 1.5rem;">🎬 Vídeo — Corona Terminada</h3>
+                <div style="text-align: center;">
+                    <video controls
+                           style="width: 100%; max-width: 800px; border-radius: 12px;
+                                  border: 3px solid #d4a574; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                        <source src="images/remodelacion_30032026/corona_terminada.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de vídeo.
+                    </video>
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">Vista de la corona metálica una vez finalizados los trabajos de instalación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Molino de Viento - Finca Lo Negrete. Patrimonio Cultural de Cartagena.</p>
+            <p>Un proyecto de restauración y conservación del patrimonio rural español.</p>
+            <p style="margin-top:0.5rem;font-size:0.85rem;"><a href="privacidad.html" style="color:#d4a574;">Política de Privacidad</a> | <a href="#" onclick="document.getElementById('cookieBanner').style.display='block';return false;" style="color:#d4a574;">Gestionar cookies</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Animación de la barra de progreso cuando entra en vista
+        const progressBar = document.querySelector('.progress-fill');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = '40%';
+                }
+            });
+        });
+
+        if (progressBar) {
+            observer.observe(progressBar);
+        }
+
+        function openImageModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('caption');
+
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            caption.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+    <!-- Modal for Image Zoom -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="caption"></div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2c2c2c;color:#fff;padding:1rem 1.5rem;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.3);">
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;max-width:1200px;margin:0 auto;">
+            <p style="margin:0;flex:1;min-width:200px;font-size:0.9rem;">Usamos cookies de Google Analytics para analizar el tráfico y mejorar la experiencia. <a href="privacidad.html" style="color:#d4a574;">Política de privacidad</a></p>
+            <div style="display:flex;gap:0.5rem;flex-shrink:0;">
+                <button onclick="acceptCookies()" style="background:#d4a574;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;">Aceptar</button>
+                <button onclick="rejectCookies()" style="background:transparent;color:#ccc;border:1px solid #ccc;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;">Rechazar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const consent = localStorage.getItem('gdpr_consent');
+            if (consent === 'granted') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+            } else if (!consent) {
+                document.getElementById('cookieBanner').style.display = 'block';
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('gdpr_consent', 'granted');
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        function rejectCookies() {
+            localStorage.setItem('gdpr_consent', 'denied');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

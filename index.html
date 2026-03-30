@@ -80,6 +80,7 @@
 
         .nav-bar {
             background: rgba(44, 62, 80, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             padding: 15px 0;
             position: fixed;
@@ -525,6 +526,7 @@
             <a href="index.html" class="logo">🌾 Molino Lo Negrete</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="restauracion.html">Restauración</a></li>
                 <li><a href="visitas.html">Visitas</a></li>
                 <li><a href="colaboracion.html">Colaboración</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
@@ -712,85 +714,6 @@
 
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Proyecto de Restauración</h2>
-            <div class="restoration-cards">
-                <div class="card">
-                    <h3>🏛️ Financiación</h3>
-                    <p>Gracias a una subvención de la comunidad autónoma de la Región de Murcia, hemos conseguido los fondos necesarios para devolver el molino a su esplendor original, respetando su patrimonio histórico.</p>
-                </div>
-                <div class="card">
-                    <h3>🔧 Restauración</h3>
-                    <p>Los trabajos incluirán la consolidación estructural, restauración de la maquinaria original y recuperación de los elementos arquitectónicos tradicionales.</p>
-                </div>
-                <div class="card">
-                    <h3>🎯 Objetivo Cultural</h3>
-                    <p>Convertir el molino en una atracción cultural que eduque sobre la historia rural de Cartagena y las técnicas tradicionales de extracción de agua.</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 50px;">
-                <h3 style="text-align: center; margin-bottom: 30px;">Estado del Proyecto</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 40%;">40% - Restauración en Curso</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title">Avance de las Obras</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Seguimiento fotográfico y en vídeo de los trabajos de restauración en curso.
-            </p>
-
-            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-bottom: 40px;">
-                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 1.5rem;">📸 Fotografías de los Trabajos</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
-                        <img src="images/remodelacion/grua_colocacion.jpeg" alt="Grúa durante la colocación"
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
-                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
-                             onclick="openImageModal(this)">
-                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Grúa — Colocación</h4>
-                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Vista general de la grúa durante los trabajos de colocación</p>
-                    </div>
-                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
-                        <img src="images/remodelacion/grua_colocacion_zoomup.jpeg" alt="Grúa — detalle"
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
-                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
-                             onclick="openImageModal(this)">
-                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Grúa — Detalle</h4>
-                        <p style="font-size: 0.9rem; color: #666; margin: 0;">Detalle del proceso de colocación con la grúa</p>
-                    </div>
-                    <div style="text-align: center; background: #f8f9fa; padding: 15px; border-radius: 12px;">
-                        <img src="images/remodelacion/rueda_desmontada.jpeg" alt="Rueda desmontada"
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;
-                                    border: 3px solid #d4a574; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: pointer;"
-                             onclick="openImageModal(this)">
-                        <h4 style="font-size: 1.1rem; color: #2c3e50; margin: 10px 0 5px 0;">Rueda Desmontada</h4>
-                        <p style="font-size: 0.9rem; color: #666; margin: 0;">La rueda de arcaduces tras ser retirada para su restauración</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
-                <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 1.5rem;">🎬 Vídeo — Extracción de la Rueda</h3>
-                <div style="text-align: center;">
-                    <video controls
-                           style="width: 100%; max-width: 800px; border-radius: 12px;
-                                  border: 3px solid #d4a574; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-                        <source src="images/remodelacion/video_sacar_rueda.mp4" type="video/mp4">
-                        Tu navegador no soporta la reproducción de vídeo.
-                    </video>
-                    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">Proceso de extracción de la rueda de arcaduces durante los trabajos de restauración</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
             <h2 class="section-title">Cronología del Proyecto</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -955,7 +878,7 @@
                 <div class="contact-card">
                     <h3>📍 Ubicación</h3>
                     <p>Finca Lo Negrete<br>Cartagena, Murcia<br>España</p>
-                    <a href="https://maps.app.goo.gl/XvtizvvB7hd1scGF6" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; border: 2px solid white; transition: all 0.3s ease;">📍 Ver en Google Maps</a>
+                    <a href="https://maps.app.goo.gl/XvtizvvB7hd1scGF6" target="_blank" rel="noopener" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; border: 2px solid white; transition: all 0.3s ease;">📍 Ver en Google Maps</a>
                 </div>
                 <div class="contact-card">
                     <h3>📧 Contacto</h3>
